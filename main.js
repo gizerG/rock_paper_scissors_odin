@@ -5,30 +5,37 @@ function getComputerChoice(array) {
 
 
 function checkWinner() {
-    if (playersChoice == computerChoice) {
+    if (playersChoiceConvert == computerChoice) {
         return "Tie !"
     } else if (
-        (playersChoice == "Rock" && computerChoice == "Scissors") ||
-        (playersChoice == "Scissors" && computerChoice == "Paper") ||
-        (playersChoice == "Paper" && computerChoice == "Rock")
+        (playersChoiceConvert == "ROCK" && computerChoice == "SCISSORS") ||
+        (playersChoiceConvert == "SCISSORS" && computerChoice == "PAPER") ||
+        (playersChoiceConvert == "PAPER" && computerChoice == "ROCK")
     ) {
-        return "Player wins!"
+        return playerWin
     } else {
-        return "Computer wins!"
+        return computerWin
     }
 }
 
-function playRound(playersChoice, computerSelection) {
+function playRound() {
 
 }
 
 
 
-let rockPaperScissors = ["Rock", "Paper", "Scissors"];
+let rockPaperScissors = ["ROCK", "PAPER", "SCISSORS"];
 const computerChoice = getComputerChoice(rockPaperScissors);
 
-const playersChoice = "Rock"
+let playersChoice = prompt("Rock, paper or scissors ?");
+let playersChoiceConvert = playersChoice.toUpperCase();
+
+const playerWin = "Players wins!"
+const computerWin = "Computer wins!"
+
 const winner = console.log(checkWinner());
+
+
 
 console.log(playersChoice);
 console.log(computerChoice);
